@@ -1,0 +1,17 @@
+class Solution {
+ public:
+  bool isPal(int x) {
+    if (x < 0)
+      return false;
+
+    long reverse = 0;
+    int y = x;
+
+    while (y) {
+      reverse = reverse* 10 + y % 10;
+      y /= 10;
+    }
+
+    return reverse == x;
+  }
+}
