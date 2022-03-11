@@ -1,0 +1,13 @@
+class Solution {
+ public:
+  int climbStairs(int n) {
+    int pred1 = 1;  // kp[i - 1], где kp – колво путей
+    int pred2 = 1;  // kp[i - 2], где kp – колво путей
+    for (int i = 2; i <= n; ++i) {
+      const int kp = pred1 + pred2; 
+      pred2 = pred1;
+      pred1 = kp;
+    }
+    return pred1;
+  }
+};
